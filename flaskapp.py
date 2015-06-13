@@ -3,6 +3,7 @@ import tablib
 
 
 app = Flask(__name__)
+app.config.from_pyfile('flaskapp.cfg')
 
 
 @app.route('/')
