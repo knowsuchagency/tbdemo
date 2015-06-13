@@ -1,27 +1,28 @@
 # tablib, flask, and openshift!
 ## Check out the web-app [here!](http://tbdemo-bamf.rhcloud.com)
 
-
-  from flask import Flask, render_template, request
-  import tablib
-
-
-  app = Flask(__name__)
-  app.config.from_pyfile('flaskapp.cfg')
+'''python
+from flask import Flask, render_template, request
+import tablib
 
 
-  @app.route('/')
-  def index():
-      return render_template('index.html')
+app = Flask(__name__)
+app.config.from_pyfile('flaskapp.cfg')
 
 
-  @app.route('/upload', methods=['POST'])
-  def upload():
-      table = tablib.Dataset()
-      file = request.files['file']
-      table.csv = file.read()
-      return table.html
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
-  if __name__ == '__main__':
-      app.run()
+@app.route('/upload', methods=['POST'])
+def upload():
+    table = tablib.Dataset()
+    file = request.files['file']
+    table.csv = file.read()
+    return table.html
+
+
+if __name__ == '__main__':
+    app.run()
+'''
