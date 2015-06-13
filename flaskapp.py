@@ -1,22 +1,22 @@
-import os
-from datetime import datetime
-from flask import Flask, request, flash, url_for, redirect, \
-     render_template, abort, send_from_directory
+from flask import Flask, render_template, request
+import tablib
+
 
 app = Flask(__name__)
-app.config.from_pyfile('flaskapp.cfg')
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/<path:resource>')
-def serveStaticResource(resource):
-    return send_from_directory('static/', resource)
 
-@app.route("/test")
-def test():
-    return "<strong>It's Alive!</strong>"
+@app.route('/upload', methods=['POST'])
+def upload():
+    table = tablib.Dataset()
+    file = request.files['file']
+    table.csv = file.read()
+    return table.html
+
 
 if __name__ == '__main__':
     app.run()
