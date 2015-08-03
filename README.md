@@ -1,7 +1,7 @@
 # tablib, flask, and openshift!
 ## Check out the web-app [here!](http://tbdemo-bamf.rhcloud.com)
 
-'''python
+```python
 from flask import Flask, render_template, request
 import tablib
 
@@ -25,4 +25,5 @@ def upload():
 
 if __name__ == '__main__':
     app.run()
+```
 '''
