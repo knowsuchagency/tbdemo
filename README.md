@@ -1,5 +1,10 @@
-# tablib, flask, and openshift!
+# Tablib, Flask, and Openshift!
 ## Check out the web-app [here!](http://tbdemo-bamf.rhcloud.com)
+
+### [__Source Code__](https://github.com/knowsuchagency/tbdemo) <- Forked from Ryan Jarvinen's [flask-base](https://github.com/ryanj/flask-base)
+### [Flask](http://flask.pocoo.org/docs/0.10/)
+### [Tablib](http://docs.python-tablib.org/en/latest/)
+### [Openshift](http://www.openshift.org/)
 
 ```python
 from flask import Flask, render_template, request
